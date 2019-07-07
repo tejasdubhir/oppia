@@ -2,8 +2,8 @@ var_for_docker_image: &docker_image circleci/python:2.7.14-jessie-browsers
 
 anchor_for_job_defaults: &job_defaults
   working_directory: /home/circleci/oppia
-  docker:
-    - image: *docker_image
+  machine:
+    image: ubuntu-1604:201903-01
 
 anchor_for_installing_dependencies: &install_dependencies
   name: Install dependencies
