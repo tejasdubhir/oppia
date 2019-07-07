@@ -13,12 +13,20 @@
 // limitations under the License.
 
 /**
- * Directive for the GraphInput response.
+ * @fileoverview Directive for the GraphInput response.
  *
  * IMPORTANT NOTE: The naming convention for customization args that are passed
  * into the directive is: the name of the parameter, followed by 'With',
  * followed by the name of the arg.
  */
+
+require('domain/utilities/UrlInterpolationService.ts');
+require('interactions/GraphInput/directives/GraphDetailService.ts');
+require('services/HtmlEscaperService.ts');
+
+require('interactions/interactions-extension.constants.ts');
+
+var oppia = require('AppInit.ts').module;
 
 oppia.directive('oppiaResponseGraphInput', [
   'GraphDetailService', 'HtmlEscaperService', 'UrlInterpolationService',

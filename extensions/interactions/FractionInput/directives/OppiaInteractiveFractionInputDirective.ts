@@ -13,8 +13,19 @@
 // limitations under the License.
 
 /**
- * Directive for the FractionInput interaction.
+ * @fileoverview Directive for the FractionInput interaction.
  */
+
+require('domain/objects/FractionObjectFactory.ts');
+require('domain/utilities/UrlInterpolationService.ts');
+require('interactions/FractionInput/directives/FractionInputRulesService.ts');
+require(
+  'pages/exploration-player-page/services/current-interaction.service.ts');
+require('services/HtmlEscaperService.ts');
+require('services/contextual/WindowDimensionsService.ts');
+require('services/stateful/FocusManagerService.ts');
+
+var oppia = require('AppInit.ts').module;
 
 oppia.directive('oppiaInteractiveFractionInput', [
   'HtmlEscaperService', 'UrlInterpolationService',

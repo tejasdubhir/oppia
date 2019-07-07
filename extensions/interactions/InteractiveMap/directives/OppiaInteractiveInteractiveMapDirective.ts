@@ -13,12 +13,22 @@
 // limitations under the License.
 
 /**
- * Directive for the InteractiveMap interaction.
+ * @fileoverview Directive for the InteractiveMap interaction.
  *
  * IMPORTANT NOTE: The naming convention for customization args that are passed
  * into the directive is: the name of the parameter, followed by 'With',
  * followed by the name of the arg.
  */
+
+require('domain/utilities/BrowserCheckerService.ts');
+require('domain/utilities/UrlInterpolationService.ts');
+require('interactions/InteractiveMap/directives/InteractiveMapRulesService.ts');
+require(
+  'pages/exploration-player-page/services/current-interaction.service.ts');
+require('services/HtmlEscaperService.ts');
+
+var oppia = require('AppInit.ts').module;
+
 oppia.directive('oppiaInteractiveInteractiveMap', [
   'HtmlEscaperService', 'InteractiveMapRulesService', 'UrlInterpolationService',
   'EVENT_NEW_CARD_AVAILABLE',

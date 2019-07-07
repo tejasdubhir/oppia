@@ -13,12 +13,20 @@
 // limitations under the License.
 
 /**
- * Directive for the Video rich-text component.
+ * @fileoverview Directive for the Video rich-text component.
  *
  * IMPORTANT NOTE: The naming convention for customization args that are passed
  * into the directive is: the name of the parameter, followed by 'With',
  * followed by the name of the arg.
  */
+
+require('domain/utilities/UrlInterpolationService.ts');
+require('services/AutoplayedVideosService.ts');
+require('services/ContextService.ts');
+require('services/HtmlEscaperService.ts');
+
+var oppia = require('AppInit.ts').module;
+
 oppia.directive('oppiaNoninteractiveVideo', [
   '$sce', 'HtmlEscaperService', 'UrlInterpolationService',
   function($sce, HtmlEscaperService, UrlInterpolationService) {

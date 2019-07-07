@@ -13,12 +13,19 @@
 // limitations under the License.
 
 /**
- * Directive for the MultipleChoiceInput short response.
+ * @fileoverview Directive for the MultipleChoiceInput short response.
  *
  * IMPORTANT NOTE: The naming convention for customization args that are passed
  * into the directive is: the name of the parameter, followed by 'With',
  * followed by the name of the arg.
  */
+
+require('domain/utilities/UrlInterpolationService.ts');
+require('filters/string-utility-filters/convert-to-plain-text.filter.ts');
+require('filters/string-utility-filters/truncate-at-first-line.filter.ts');
+require('services/HtmlEscaperService.ts');
+
+var oppia = require('AppInit.ts').module;
 
 oppia.directive('oppiaShortResponseMultipleChoiceInput', [
   'HtmlEscaperService', 'UrlInterpolationService',

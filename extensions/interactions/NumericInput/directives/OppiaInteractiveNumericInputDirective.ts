@@ -13,12 +13,22 @@
 // limitations under the License.
 
 /**
- * Directive for the NumericInput interaction.
+ * @fileoverview Directive for the NumericInput interaction.
  *
  * IMPORTANT NOTE: The naming convention for customization args that are passed
  * into the directive is: the name of the parameter, followed by 'With',
  * followed by the name of the arg.
  */
+
+require('domain/utilities/UrlInterpolationService.ts');
+require('interactions/NumericInput/directives/NumericInputRulesService.ts');
+require(
+  'pages/exploration-player-page/services/current-interaction.service.ts');
+require('services/contextual/WindowDimensionsService.ts');
+require('services/stateful/FocusManagerService.ts');
+
+var oppia = require('AppInit.ts').module;
+
 oppia.directive('oppiaInteractiveNumericInput', [
   'UrlInterpolationService', function(UrlInterpolationService) {
     return {

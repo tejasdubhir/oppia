@@ -13,8 +13,13 @@
 // limitations under the License.
 
 /**
- * Directive for the DragAndDropSortInput short response.
+ * @fileoverview Directive for the DragAndDropSortInput short response.
  */
+
+require('domain/utilities/UrlInterpolationService.ts');
+require('services/HtmlEscaperService.ts');
+
+var oppia = require('AppInit.ts').module;
 
 oppia.directive('oppiaShortResponseDragAndDropSortInput', [
   'HtmlEscaperService', 'UrlInterpolationService',

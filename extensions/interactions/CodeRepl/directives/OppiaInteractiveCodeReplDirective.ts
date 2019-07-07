@@ -13,12 +13,21 @@
 // limitations under the License.
 
 /**
- * Directive for the CodeRepl interaction.
+ * @fileoverview Directive for the CodeRepl interaction.
  *
  * IMPORTANT NOTE: The naming convention for customization args that are passed
  * into the directive is: the name of the parameter, followed by 'With',
  * followed by the name of the arg.
  */
+
+require('domain/utilities/UrlInterpolationService.ts');
+require('interactions/CodeRepl/directives/CodeReplRulesService.ts');
+require(
+  'pages/exploration-player-page/services/current-interaction.service.ts');
+require('services/HtmlEscaperService.ts');
+require('services/contextual/WindowDimensionsService.ts');
+
+var oppia = require('AppInit.ts').module;
 
 oppia.directive('oppiaInteractiveCodeRepl', [
   'CodeReplRulesService', 'HtmlEscaperService', 'UrlInterpolationService',
@@ -45,7 +54,7 @@ oppia.directive('oppiaInteractiveCodeRepl', [
           var ctrl = this;
           ctrl.interactionIsActive = (ctrl.getLastAnswer() === null);
 
-          ctrl.$on(EVENT_NEW_CARD_AVAILABLE, function() {
+          $scope.$on(EVENT_NEW_CARD_AVAILABLE, function() {
             ctrl.interactionIsActive = false;
           });
           ctrl.language = HtmlEscaperService.escapedJsonToObj(

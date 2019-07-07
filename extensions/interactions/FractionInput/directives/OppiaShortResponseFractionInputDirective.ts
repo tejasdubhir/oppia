@@ -13,8 +13,14 @@
 // limitations under the License.
 
 /**
- * Directive for the FractionInput short response.
+ * @fileoverview Directive for the FractionInput short response.
  */
+
+require('domain/objects/FractionObjectFactory.ts');
+require('domain/utilities/UrlInterpolationService.ts');
+require('services/HtmlEscaperService.ts');
+
+var oppia = require('AppInit.ts').module;
 
 oppia.directive('oppiaShortResponseFractionInput', [
   'FractionObjectFactory', 'HtmlEscaperService', 'UrlInterpolationService',

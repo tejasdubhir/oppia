@@ -13,8 +13,18 @@
 // limitations under the License.
 
 /**
- * Directive for the NumberWithUnits interaction.
+ * @fileoverview Directive for the NumberWithUnits interaction.
  */
+
+require('domain/objects/NumberWithUnitsObjectFactory.ts');
+require('domain/utilities/UrlInterpolationService.ts');
+require(
+  'pages/exploration-player-page/services/current-interaction.service.ts');
+require(
+  'interactions/NumberWithUnits/directives/NumberWithUnitsRulesService.ts');
+require('services/HtmlEscaperService.ts');
+
+var oppia = require('AppInit.ts').module;
 
 oppia.directive('oppiaInteractiveNumberWithUnits', [
   'HtmlEscaperService', 'UrlInterpolationService',

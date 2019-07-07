@@ -13,12 +13,17 @@
 // limitations under the License.
 
 /**
- * Directives for the MusicNotesInput response.
+ * @fileoverview Directives for the MusicNotesInput response.
  *
  * IMPORTANT NOTE: The naming convention for customization args that are passed
  * into the directive is: the name of the parameter, followed by 'With',
  * followed by the name of the arg.
  */
+
+require('domain/utilities/UrlInterpolationService.ts');
+require('services/HtmlEscaperService.ts');
+
+var oppia = require('AppInit.ts').module;
 
 oppia.directive('oppiaResponseMusicNotesInput', [
   'HtmlEscaperService', 'UrlInterpolationService',

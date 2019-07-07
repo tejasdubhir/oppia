@@ -12,7 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+/**
+ * @fileoverview Directive for normalized string editor.
+ */
+
 // This is a copy of the UnicodeStringEditor.
+
+var oppia = require('AppInit.ts').module;
 
 oppia.directive('normalizedStringEditor', [
   'UrlInterpolationService', 'OBJECT_EDITOR_URL_PREFIX',

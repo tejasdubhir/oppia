@@ -13,12 +13,18 @@
 // limitations under the License.
 
 /**
- * Directive for the CodeRepl response.
+ * @fileoverview Directive for the CodeRepl response.
  *
  * IMPORTANT NOTE: The naming convention for customization args that are passed
  * into the directive is: the name of the parameter, followed by 'With',
  * followed by the name of the arg.
  */
+
+require('domain/utilities/UrlInterpolationService.ts');
+require('services/HtmlEscaperService.ts');
+require('services/stateful/FocusManagerService.ts');
+
+var oppia = require('AppInit.ts').module;
 
 oppia.directive('oppiaResponseCodeRepl', [
   'HtmlEscaperService', 'UrlInterpolationService',

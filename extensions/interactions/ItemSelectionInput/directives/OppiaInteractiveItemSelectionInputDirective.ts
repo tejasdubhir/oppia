@@ -13,12 +13,24 @@
 // limitations under the License.
 
 /**
- * Directive for the ItemSelectionInput interaction.
+ * @fileoverview Directive for the ItemSelectionInput interaction.
  *
  * IMPORTANT NOTE: The naming convention for customization args that are passed
  * into the directive is: the name of the parameter, followed by 'With',
  * followed by the name of the arg.
  */
+
+require('domain/utilities/UrlInterpolationService.ts');
+require(
+  'interactions/ItemSelectionInput/directives/' +
+  'ItemSelectionInputRulesService.ts');
+require(
+  'pages/exploration-player-page/services/current-interaction.service.ts');
+require('services/contextual/UrlService.ts');
+require('services/contextual/WindowDimensionsService.ts');
+require('services/HtmlEscaperService.ts');
+
+var oppia = require('AppInit.ts').module;
 
 oppia.directive('oppiaInteractiveItemSelectionInput', [
   'HtmlEscaperService', 'ItemSelectionInputRulesService',

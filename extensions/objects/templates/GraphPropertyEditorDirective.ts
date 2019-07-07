@@ -13,9 +13,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+/**
+ * @fileoverview Directive for graph property editor.
+ */
+
 // Every editor directive should implement an alwaysEditable option. There
 // may be additional customization options for the editor that should be passed
 // in via initArgs.
+
+var oppia = require('AppInit.ts').module;
 
 oppia.directive('graphPropertyEditor', [
   'UrlInterpolationService', 'OBJECT_EDITOR_URL_PREFIX',

@@ -13,12 +13,21 @@
 // limitations under the License.
 
 /**
- * Directive for the graph-viz.
+ * @fileoverview Directive for the graph-viz.
  *
  * IMPORTANT NOTE: The naming convention for customization args that are passed
  * into the directive is: the name of the parameter, followed by 'With',
  * followed by the name of the arg.
  */
+
+require('domain/utilities/UrlInterpolationService.ts');
+require('interactions/GraphInput/directives/GraphDetailService.ts');
+require('services/contextual/DeviceInfoService.ts');
+require('services/stateful/FocusManagerService.ts');
+
+require('interactions/interactions-extension.constants.ts');
+
+var oppia = require('AppInit.ts').module;
 
 oppia.directive('graphViz', [
   'UrlInterpolationService', function(UrlInterpolationService) {

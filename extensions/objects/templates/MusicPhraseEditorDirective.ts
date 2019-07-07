@@ -12,7 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+/**
+ * @fileoverview Directive for music phrase editor.
+ */
+
 // This directive is always editable.
+
+var oppia = require('AppInit.ts').module;
 
 oppia.directive('musicPhraseEditor', [
   'AlertsService', 'UrlInterpolationService', 'OBJECT_EDITOR_URL_PREFIX',

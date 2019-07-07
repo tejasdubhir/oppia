@@ -13,12 +13,17 @@
 // limitations under the License.
 
 /**
- * Directive for the ImageClickInput response.
+ * @fileoverview Directive for the ImageClickInput response.
  *
  * IMPORTANT NOTE: The naming convention for customization args that are passed
  * into the directive is: the name of the parameter, followed by 'With',
  * followed by the name of the arg.
  */
+
+require('domain/utilities/UrlInterpolationService.ts');
+require('services/HtmlEscaperService.ts');
+
+var oppia = require('AppInit.ts').module;
 
 oppia.directive('oppiaResponseImageClickInput', [
   'UrlInterpolationService', function(UrlInterpolationService) {

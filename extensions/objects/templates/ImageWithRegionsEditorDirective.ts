@@ -12,11 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+/**
+ * @fileoverview Directive for image with regions editor.
+ */
+
 // Every editor directive should implement an alwaysEditable option. There
 // may be additional customization options for the editor that should be passed
 // in via initArgs.
 
 // TODO(czx): Uniquify the labels of image regions
+var oppia = require('AppInit.ts').module;
+
 oppia.directive('imageWithRegionsEditor', [
   '$document', '$sce', 'AlertsService', 'AssetsBackendApiService',
   'ContextService', 'UrlInterpolationService',
@@ -178,7 +184,7 @@ oppia.directive('imageWithRegionsEditor', [
                     <HTMLCanvasElement><any> this).width;
                   ctrl.originalImageHeight = (
                     <HTMLCanvasElement><any> this).height;
-                  ctrl.$apply();
+                  $scope.$apply();
                 }
               );
             }

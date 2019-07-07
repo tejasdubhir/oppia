@@ -13,8 +13,15 @@
 // limitations under the License.
 
 /**
- * Directive for the LogicProof short response.
+ * @fileoverview Directive for the LogicProof short response.
  */
+
+require('filters/string-utility-filters/truncate-at-first-line.filter.ts');
+
+require('domain/utilities/UrlInterpolationService.ts');
+require('services/HtmlEscaperService.ts');
+
+var oppia = require('AppInit.ts').module;
 
 oppia.directive('oppiaShortResponseLogicProof', [
   'HtmlEscaperService', 'UrlInterpolationService',

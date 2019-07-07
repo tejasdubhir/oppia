@@ -13,12 +13,20 @@
 // limitations under the License.
 
 /**
- * Directive for the EndExploration 'interaction'.
+ * @fileoverview Directive for the EndExploration 'interaction'.
  *
  * IMPORTANT NOTE: The naming convention for customization args that are passed
  * into the directive is: the name of the parameter, followed by 'With',
  * followed by the name of the arg.
  */
+
+require('domain/utilities/UrlInterpolationService.ts');
+require('services/ContextService.ts');
+require('services/HtmlEscaperService.ts');
+require('services/contextual/UrlService.ts');
+
+var oppia = require('AppInit.ts').module;
+
 oppia.directive('oppiaInteractiveEndExploration', [
   'UrlInterpolationService', function(UrlInterpolationService) {
     return {

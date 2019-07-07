@@ -13,8 +13,14 @@
 // limitations under the License.
 
 /**
- * Directive for the NumberWithUnits response.
+ * @fileoverview Directive for the NumberWithUnits response.
  */
+
+require('domain/objects/NumberWithUnitsObjectFactory.ts');
+require('domain/utilities/UrlInterpolationService.ts');
+require('services/HtmlEscaperService.ts');
+
+var oppia = require('AppInit.ts').module;
 
 oppia.directive('oppiaResponseNumberWithUnits', [
   'HtmlEscaperService', 'NumberWithUnitsObjectFactory',
