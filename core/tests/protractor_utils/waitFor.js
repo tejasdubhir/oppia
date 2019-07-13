@@ -22,7 +22,7 @@ var until = protractor.ExpectedConditions;
 // might take some time to establish a connection with the
 // server since the mobile tests are run on a real
 // mobile device.
-var DEFAULT_WAIT_TIME_MSECS = browser.isMobile ? 20000 : 10000;
+var DEFAULT_WAIT_TIME_MSECS = browser.isMobile ? 200000 : 100000;
 
 var alertToBePresent = function() {
   return browser.wait(
