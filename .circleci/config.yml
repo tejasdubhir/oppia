@@ -11,8 +11,8 @@ anchor_for_job_defaults: &job_defaults
   # information: https://github.com/oppia/oppia/pull/7067#issuecomment-508822501
   environment:
     CC_TEST_REPORTER_ID: 561968e2f03d3bb4f1aed69dc94174c2e3b9dc82cf1f8ad31fc799f8c67afc6e
-  docker:
-    - image: *docker_image
+#   docker:
+#     - image: *docker_image
 
 anchor_for_installing_dependencies: &install_dependencies
   name: Install dependencies
