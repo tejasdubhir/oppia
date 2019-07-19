@@ -372,9 +372,9 @@ jobs:
       - run:
           <<: *install_chrome
       - run:
-          name: Run skillEditorPage e2e Tests
+          name: Run skillEditor e2e Tests
           command: |
-            bash scripts/run_e2e_tests.sh --suite="skillEditorPage" --prod_env
+            bash scripts/run_e2e_tests.sh --suite="skillEditor" --prod_env
 
   subscriptions_e2e_tests:
     <<: *job_defaults
