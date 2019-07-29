@@ -136,7 +136,7 @@ jobs:
       - run:
           name: Run accessibility e2e Tests
           command: |
-            bash scripts/run_e2e_tests.sh --suite="accessibility" --prod_env
+            bash scripts/run_e2e_tests.sh --suite="accessibility" --prod_env --sharding=false
 
   additionalEditorAndPlayerFeatures_e2e_tests:
     <<: *job_defaults
@@ -150,7 +150,7 @@ jobs:
       - run:
           name: Run additionalEditorAndPlayerFeatures e2e Tests
           command: |
-            bash scripts/run_e2e_tests.sh --suite="additionalEditorAndPlayerFeatures" --prod_env
+            bash scripts/run_e2e_tests.sh --suite="additionalEditorAndPlayerFeatures" --prod_env --sharding=false
 
   collections_e2e_tests:
     <<: *job_defaults
@@ -164,7 +164,7 @@ jobs:
       - run:
           name: Run collections e2e Tests
           command: |
-            bash scripts/run_e2e_tests.sh --suite="collections" --prod_env
+            bash scripts/run_e2e_tests.sh --suite="collections" --prod_env --sharding=false
 
   coreEditorAndPlayerFeatures_e2e_tests:
     <<: *job_defaults
@@ -178,7 +178,7 @@ jobs:
       - run:
           name: Run coreEditorAndPlayerFeatures e2e Tests
           command: |
-            bash scripts/run_e2e_tests.sh --suite="coreEditorAndPlayerFeatures" --prod_env
+            bash scripts/run_e2e_tests.sh --suite="coreEditorAndPlayerFeatures" --prod_env --sharding=false
 
   embedding_e2e_tests:
     <<: *job_defaults
@@ -192,7 +192,7 @@ jobs:
       - run:
           name: Run embedding e2e Tests
           command: |
-            bash scripts/run_e2e_tests.sh --suite="embedding" --prod_env
+            bash scripts/run_e2e_tests.sh --suite="embedding" --prod_env --sharding=false
 
   explorationFeedbackTab_e2e_tests:
     <<: *job_defaults
@@ -206,7 +206,7 @@ jobs:
       - run:
           name: Run explorationFeedbackTab e2e Tests
           command: |
-            bash scripts/run_e2e_tests.sh --suite="explorationFeedbackTab" --prod_env
+            bash scripts/run_e2e_tests.sh --suite="explorationFeedbackTab" --prod_env --sharding=false
 
   explorationHistoryTab_e2e_tests:
     <<: *job_defaults
@@ -220,7 +220,7 @@ jobs:
       - run:
           name: Run explorationHistoryTab e2e Tests
           command: |
-            bash scripts/run_e2e_tests.sh --suite="explorationHistoryTab" --prod_env
+            bash scripts/run_e2e_tests.sh --suite="explorationHistoryTab" --prod_env --sharding=false
 
   explorationStatisticsTab_e2e_tests:
     <<: *job_defaults
@@ -234,7 +234,7 @@ jobs:
       - run:
           name: Run explorationStatisticsTab e2e Tests
           command: |
-            bash scripts/run_e2e_tests.sh --suite="explorationStatisticsTab" --prod_env
+            bash scripts/run_e2e_tests.sh --suite="explorationStatisticsTab" --prod_env --sharding=false
 
   explorationTranslationTab_e2e_tests:
     <<: *job_defaults
@@ -248,7 +248,7 @@ jobs:
       - run:
           name: Run explorationTranslationTab e2e Tests
           command: |
-            bash scripts/run_e2e_tests.sh --suite="explorationTranslationTab" --prod_env
+            bash scripts/run_e2e_tests.sh --suite="explorationTranslationTab" --prod_env --sharding=false
 
   extensions_e2e_tests:
     <<: *job_defaults
@@ -262,7 +262,7 @@ jobs:
       - run:
           name: Run extensions e2e Tests
           command: |
-            bash scripts/run_e2e_tests.sh --suite="extensions" --prod_env
+            bash scripts/run_e2e_tests.sh --suite="extensions" --prod_env --sharding=false
 
   learnerDashboard_e2e_tests:
     <<: *job_defaults
@@ -276,7 +276,7 @@ jobs:
       - run:
           name: Run learnerDashboard e2e Tests
           command: |
-            bash scripts/run_e2e_tests.sh --suite="learnerDashboard" --prod_env
+            bash scripts/run_e2e_tests.sh --suite="learnerDashboard" --prod_env --sharding=false
 
   learner_e2e_tests:
     <<: *job_defaults
@@ -290,7 +290,7 @@ jobs:
       - run:
           name: Run learner e2e Tests
           command: |
-            bash scripts/run_e2e_tests.sh --suite="learner" --prod_env
+            bash scripts/run_e2e_tests.sh --suite="learner" --prod_env --sharding=false
 
   library_e2e_tests:
     <<: *job_defaults
@@ -304,7 +304,7 @@ jobs:
       - run:
           name: Run library e2e Tests
           command: |
-            bash scripts/run_e2e_tests.sh --suite="library" --prod_env
+            bash scripts/run_e2e_tests.sh --suite="library" --prod_env --sharding=false
 
   navigation_e2e_tests:
     <<: *job_defaults
@@ -318,7 +318,7 @@ jobs:
       - run:
           name: Run navigation e2e Tests
           command: |
-            bash scripts/run_e2e_tests.sh --suite="navigation" --prod_env
+            bash scripts/run_e2e_tests.sh --suite="navigation" --prod_env --sharding=false
 
   preferences_e2e_tests:
     <<: *job_defaults
@@ -332,7 +332,7 @@ jobs:
       - run:
           name: Run preferences e2e Tests
           command: |
-            bash scripts/run_e2e_tests.sh --suite="preferences" --prod_env
+            bash scripts/run_e2e_tests.sh --suite="preferences" --prod_env --sharding=false
 
   profileMenu_e2e_tests:
     <<: *job_defaults
@@ -346,7 +346,7 @@ jobs:
       - run:
           name: Run profileMenu e2e Tests
           command: |
-            bash scripts/run_e2e_tests.sh --suite="profileMenu" --prod_env
+            bash scripts/run_e2e_tests.sh --suite="profileMenu" --prod_env --sharding=false
 
   publication_e2e_tests:
     <<: *job_defaults
@@ -360,7 +360,7 @@ jobs:
       - run:
           name: Run publication e2e Tests
           command: |
-            bash scripts/run_e2e_tests.sh --suite="publication" --prod_env
+            bash scripts/run_e2e_tests.sh --suite="publication" --prod_env --sharding=false
 
   skillEditorPage_e2e_tests:
     <<: *job_defaults
@@ -374,7 +374,7 @@ jobs:
       - run:
           name: Run skillEditor e2e Tests
           command: |
-            bash scripts/run_e2e_tests.sh --suite="skillEditor" --prod_env
+            bash scripts/run_e2e_tests.sh --suite="skillEditor" --prod_env --sharding=false
 
   subscriptions_e2e_tests:
     <<: *job_defaults
@@ -388,7 +388,7 @@ jobs:
       - run:
           name: Run subscriptions e2e Tests
           command: |
-            bash scripts/run_e2e_tests.sh --suite="subscriptions" --prod_env
+            bash scripts/run_e2e_tests.sh --suite="subscriptions" --prod_env --sharding=false
 
   topicsAndSkillsDashboard_e2e_tests:
     <<: *job_defaults
@@ -402,7 +402,7 @@ jobs:
       - run:
           name: Run topicsAndSkillsDashboard e2e Tests
           command: |
-            bash scripts/run_e2e_tests.sh --suite="topicsAndSkillsDashboard" --prod_env
+            bash scripts/run_e2e_tests.sh --suite="topicsAndSkillsDashboard" --prod_env --sharding=false
 
   topicAndStoryEditor_e2e_tests:
     <<: *job_defaults
@@ -416,7 +416,7 @@ jobs:
       - run:
           name: Run topicAndStoryEditor e2e Tests
           command: |
-            bash scripts/run_e2e_tests.sh --suite="topicAndStoryEditor" --prod_env
+            bash scripts/run_e2e_tests.sh --suite="topicAndStoryEditor" --prod_env --sharding=false
 
   users_e2e_tests:
     <<: *job_defaults
@@ -430,7 +430,7 @@ jobs:
       - run:
           name: Run users e2e Tests
           command: |
-            bash scripts/run_e2e_tests.sh --suite="users" --prod_env
+            bash scripts/run_e2e_tests.sh --suite="users" --prod_env --sharding=false
 
 workflows:
   version: 2
