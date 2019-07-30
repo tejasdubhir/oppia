@@ -102,7 +102,7 @@ describe('rich-text components', function() {
 });
 
 
-fdescribe('Interactions', function() {
+describe('Interactions', function() {
   var explorationEditorPage = null;
   var explorationEditorMainTab = null;
   var explorationEditorSettingsTab = null;
@@ -117,7 +117,7 @@ fdescribe('Interactions', function() {
     libraryPage = new LibraryPage.LibraryPage();
   });
 
-  fit('should pass their own test suites', function() {
+  it('should pass their own test suites', function() {
     users.createUser('user@interactions.com', 'userInteractions');
     users.login('user@interactions.com');
     workflow.createExploration();
@@ -197,7 +197,6 @@ fdescribe('Interactions', function() {
         }
         explorationEditorPage.navigateToMainTab();
 
-        //explorationEditorPage.saveChanges();
         workflow.publishExploration();
 
         libraryPage.get();
