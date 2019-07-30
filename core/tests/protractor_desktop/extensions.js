@@ -102,7 +102,7 @@ describe('rich-text components', function() {
 });
 
 
-describe('Interactions', function() {
+fdescribe('Interactions', function() {
   var explorationEditorPage = null;
   var explorationEditorMainTab = null;
   var explorationEditorSettingsTab = null;
@@ -117,12 +117,32 @@ describe('Interactions', function() {
     libraryPage = new LibraryPage.LibraryPage();
   });
 
-  it('should pass their own test suites', function() {
+  fit('should pass their own test suites', function() {
     users.createUser('user@interactions.com', 'userInteractions');
     users.login('user@interactions.com');
     workflow.createExploration();
     explorationEditorMainTab.setStateName('first');
     explorationEditorMainTab.setContent(forms.toRichText('some content'));
+    explorationEditorMainTab.setInteraction('Continue', 'click here');
+
+    // Make the exploration publishable.
+    explorationEditorMainTab.getResponseEditor('default')
+      .setDestination('final card', true, null);
+    explorationEditorMainTab.moveToState('final card');
+    explorationEditorMainTab.setInteraction('EndExploration');
+    explorationEditorPage.saveChanges();
+    explorationEditorPage.navigateToSettingsTab();
+
+    explorationEditorSettingsTab.setTitle('Interaction Test Exploration');
+    explorationEditorSettingsTab.setObjective(
+      'To publish and test interactions');
+    explorationEditorSettingsTab.setCategory('Logic');
+    explorationEditorPage.saveChanges();
+
+    workflow.publishExploration();
+
+    explorationEditorPage.navigateToMainTab();
+    explorationEditorMainTab.moveToState('first');
 
     var defaultOutcomeSet = false;
 
@@ -130,6 +150,9 @@ describe('Interactions', function() {
       var interaction = interactions.INTERACTIONS[interactionId];
       for (var i = 0; i < interaction.testSuite.length; i++) {
         var test = interaction.testSuite[i];
+
+        explorationEditorMainTab.expectCurrentStateToBe('first');
+        explorationEditorMainTab.deleteInteraction();
 
         explorationEditorMainTab.setInteraction.apply(
           null, [interactionId].concat(test.interactionArguments));
@@ -148,6 +171,8 @@ describe('Interactions', function() {
         }
 
         explorationEditorPage.navigateToPreviewTab();
+
+        // Checks the exploration preview page.
         explorationPlayerPage.expectInteractionToMatch.apply(
           null, [interactionId].concat(test.expectedInteractionDetails));
         for (var j = 0; j < test.wrongAnswers.length; j++) {
@@ -171,7 +196,43 @@ describe('Interactions', function() {
             forms.toRichText('yes'));
         }
         explorationEditorPage.navigateToMainTab();
-        explorationEditorMainTab.deleteInteraction();
+
+        //explorationEditorPage.saveChanges();
+        workflow.publishExploration();
+
+        libraryPage.get();
+        libraryPage.findExploration('Interaction Test Exploration');
+        libraryPage.playExploration('Interaction Test Exploration');
+        explorationPlayerPage.expectExplorationNameToBe(
+          'Interaction Test Exploration');
+
+        // Checks the learner view.
+        explorationPlayerPage.expectInteractionToMatch.apply(
+          null, [interactionId].concat(test.expectedInteractionDetails));
+        for (var j = 0; j < test.wrongAnswers.length; j++) {
+          explorationPlayerPage.submitAnswer(
+            interactionId, test.wrongAnswers[j]);
+          explorationPlayerPage.expectLatestFeedbackToMatch(
+            forms.toRichText('no'));
+        }
+
+        // Dismiss conversation help card.
+        var clearHelpcardButton = element(by.css(
+          '.protractor-test-close-help-card-button'));
+        clearHelpcardButton.isPresent().then(function(isPresent) {
+          if (isPresent) {
+            clearHelpcardButton.click();
+          }
+        });
+
+        for (var j = 0; j < test.correctAnswers.length; j++) {
+          explorationPlayerPage.submitAnswer(
+            interactionId, test.correctAnswers[j]);
+          explorationPlayerPage.expectLatestFeedbackToMatch(
+            forms.toRichText('yes'));
+        }
+
+        general.moveToEditor();
       }
     }
     explorationEditorPage.discardChanges();
