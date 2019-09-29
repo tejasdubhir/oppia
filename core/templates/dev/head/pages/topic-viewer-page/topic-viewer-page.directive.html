@@ -30,6 +30,7 @@
   </div>
   <div ng-if="$ctrl.activeTab === 'practice'" class="oppia-practice-tab">
     <practice-tab topic-name="$ctrl.topicName"></practice-tab>
+    <skills-mastery-list degrees-of-mastery="$ctrl.degreesOfMastery" skill-descriptions="$ctrl.skillDescriptions"></skills-mastery-list>
   </div>
   <div ng-if="$ctrl.activeTab === 'subtopics'" class="oppia-subtopics-tab">
     <subtopics-list subtopics-list="$ctrl.subtopics"></subtopics-list>
@@ -114,7 +115,7 @@
     color: #01645c;
     font-family: 'Capriola', 'Roboto', Arial, sans-serif;
     font-size: 3em;
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 25px;
     padding-top: 66.5px;
     text-align: center;
